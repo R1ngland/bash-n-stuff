@@ -1,0 +1,1 @@
+for f in $(find ./ -type f -name version.php); do echo -e "$f ---->  $(awk -F "'" '/wp_version/{printf $2}' $f)";done | column -t
