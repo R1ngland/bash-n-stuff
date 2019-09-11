@@ -1,0 +1,3 @@
+prompt_thing () { if [[ "$EMOJI" == "(︵°_°)︵ ┬─┬" ]]; then EMOJI="(╯ °□°)╯ ︵ ┻━━┻"; else EMOJI="(︵°_°)︵ ┬─┬"; fi; }
+export PROMPT_COMMAND=prompt_thing
+PS1='$EMOJI $ '
