@@ -1,0 +1,1 @@
+echo "Detailed Inode usage for: $(pwd)" ;while read d; do  c=$(find "$d" -regextype posix-awk -not -regex '/?home/virtfs(/?.*)' |wc -l) ; printf "$c\t\t- $d\n" ; done < <(find $(pwd) -regextype posix-awk  -mindepth 1 -maxdepth 1 -type d -not -regex '/?(dev|proc|home/virtfs|sys)(/?.*)')  | sort -rn
