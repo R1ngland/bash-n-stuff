@@ -1,0 +1,1 @@
+U=$(for f in $(awk -F= '/^DNS/{print $2}' /var/cpanel/users/$(whoami) ); do echo $f; done)  ; for f in $U; do echo -ne "$f\t" && curl -IL $f 2>&1 |  awk '/HTTP/{print $2, $3}' | column -t ; done
