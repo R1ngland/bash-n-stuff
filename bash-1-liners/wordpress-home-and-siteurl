@@ -1,0 +1,1 @@
+wp=($( awk -F "'|," '/DB_[NUP]/ {print $5}' wp-config.php ; awk -F "'|," '/e_pr/ {print $2}' wp-config.php)) ; mysql -u "${wp[1]}" -p"${wp[2]}"  "${wp[0]}" -e "SELECT option_name, option_value FROM ${wp[3]}options WHERE option_name = 'home' OR option_name = 'siteurl'; " 2>/dev/null
