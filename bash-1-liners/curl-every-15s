@@ -1,0 +1,1 @@
+while true; do curl -IL DOMAIN 2>&1 | grep "^HTTP\/" ; sleep 15; done
