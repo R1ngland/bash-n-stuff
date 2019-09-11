@@ -1,0 +1,1 @@
+echo -e "Inode count for `pwd`:\n"; /bin/ls -A|awk '{print "count=`find \""$0"\"|wc -l`; echo \""$0" \t\t $count\""}'|sh|awk '$NF != "1" {inode=$NF;$NF="";print "printf \"%-50s %8d\\n\" \""$0"\" \""inode"\""}'|sh && printf "%-50s %8d\n" "Total:" "`find ${pwd}|wc -l`"
