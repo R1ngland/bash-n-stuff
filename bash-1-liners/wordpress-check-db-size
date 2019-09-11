@@ -1,0 +1,1 @@
+wp=($( awk -F "'|," '/DB_[NUP]/ {print $5}' wp-config.php ; awk -F "'|," '/e_pr/ {print $2}' wp-config.php)) ; mysql -u "${wp[1]}" -p"${wp[2]}"  "${wp[0]}" -e "SELECT table_schema, sum((data_length+index_length)/1024/1024) AS MB from information_schema.tables group by 1;" 2>/dev/null
