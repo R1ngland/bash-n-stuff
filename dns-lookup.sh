@@ -1,5 +1,5 @@
 dns(){
-#Put together by github.com/R1ngland on 07/09/2019
+#Put together by github.com/R1ngland on 07/09/2019, put this in your .bashrc then "source .bashrc"
 
 for domain in ${@}; do
 
