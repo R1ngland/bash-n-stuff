@@ -1,0 +1,1 @@
+grep -he "$(date -d "-1 day" "+%d/%b/%Y")\|$(date "+%d/%b/%Y")" ~/access-logs/* | awk '{print $1}'  | sort | uniq -c | sort -rn | head -25
