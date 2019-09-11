@@ -1,0 +1,13 @@
+#! usr/bin/env python
+import random
+
+def main():
+	diceRoll = random.randint(1,6)
+	diceRoll2 = random.randint(1,6)
+	print("Player 1 rolled a: ")
+	print( diceRoll + diceRoll)
+	print("Player 2 rolled a: ")
+        print( diceRoll2 + diceRoll2)
+
+if __name__ == "__main__":
+	main()
