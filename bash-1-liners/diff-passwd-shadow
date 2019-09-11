@@ -1,0 +1,1 @@
+diff <(awk -F "[:|$]" '{print $1}' shadow) <(awk -F "[:|$]" '{print $1}' passwd)
