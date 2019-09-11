@@ -1,0 +1,45 @@
+#! /usr/bin/env python
+import random
+import pickle
+import os
+import time
+
+def main():
+    try:
+      with open('score.dat', 'rb' ) as file:
+        highscore = pickle.load(score.dat) 
+    except: 
+        highscore = 2
+    score = 0
+    #highscore = 2 
+    print("Guess a number between 1 and 100.")
+    #randomNumber = 27 # for debugging only
+    randomNumber = random.randint(1,100)
+    found = False
+    while not found:
+        userGuess = input("Your guess: ")
+        if userGuess == randomNumber:
+	    print("You got it!")
+            found = True
+            if score < highscore:
+		print("you beat the high score!")
+	        try:
+		  with open('score.dat', 'wb') as file:
+  		    score = pickle.dump(score.dat)
+		except:
+		  print("Thanks for playing!")
+	    else: 
+		print("You didn't beat the high score." )
+            time.sleep(3)
+            os.system("clear") 
+        elif userGuess > randomNumber:
+            print("Guess lower!")
+	    score = ( 1 + score ) 
+        else:
+            print("Guess higher!")
+	    score = ( 1 + score )
+
+
+
+if __name__ == "__main__":
+    main()
